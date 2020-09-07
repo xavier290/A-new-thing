@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     background:rgb(0, 0, 0);
+    box-sizing: border-box;
 }
 .wrapper {
     width: 10%;
@@ -10,7 +11,6 @@ body {
     left: 550px;
     top: 300px;
     display: block;
-    cursor: pointer;
 }
 .red {
     width: 80px;
