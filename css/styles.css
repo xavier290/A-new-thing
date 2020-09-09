@@ -2,69 +2,91 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: 40ms;
 }
 
 body {
-    background:rgb(0, 0, 0);
+    background: linear-gradient(#6d4705 70%, rgba(255, 255, 255, 0.664) 30%);
+    min-height: 100vh;
+}
+
+input {
+    opacity: 0;
+}
+
+.square {
+    width: 40%;
+    height: 50%;
+    background-color: rgb(245, 233, 214);
+    position: absolute;
+    top: 220px;
+    left: 420px;
+    z-index: 0;
 }
 
 .fireplace {
-    width: 40%;
-    height: 40%;
-
+    width: 60%;
+    height: 85%;
+    background-color: rgb(58, 40, 2);
+    border: solid 30px rgb(61, 49, 2);
+    position: absolute; 
+    border-radius: 50% 50% 0 0;
+    top: 30px;
+    left: 115px;
 }
 
 .wrapper {
     width: 10%;
-    height: 20%;
+    height: 5%;
     position: absolute;
     left: 650px;
-    top: 300px;
+    top: 456px;
     display: block;
     opacity: 0;
+    cursor: pointer;
+    z-index: 1;
 }
 .red {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     background: orangered;
     box-shadow: 0px 0px 10px 5px orangered;
 }
 .orange {
-    left:10px;
-    width: 60px;
-    height: 60px;
+    left: 9px;
+    width: 70px;
+    height: 70px;
     background: orange;
     box-shadow: 0px 0px 12px 6px orange;
 }
 .gold {
-    left:18px;
-    width: 45px;
-    height: 45px;
+    left: 17px;
+    width: 60px;
+    height: 60px;
     background: gold;
     box-shadow: 0px 0px 9px 4px gold;
 }
 .white {
-    left:22px;
-    width: 35px;
-    height: 35px;
+    left: 19px;
+    width: 50px;
+    height: 50px;
     background: lightyellow;
     box-shadow: 0px 0px 9px 4px lightyellow;
 }
 .blue {
-    left:32px;
-    width: 15px;
-    height: 15px;
+    left: 36px;
+    width: 18px;
+    height: 5px;
     background: darkblue;
     box-shadow: 0px 0px 15px 10px darkblue;
 }
 .black {
-    left:20px;
-    width: 40px;
-    height: 40px;
-    bottom:-50px;
+    left: 36px;
+    width: 16px;
+    height: 15px;
+    bottom: -4px;
     background: black;
     box-shadow: 0px 0px 15px 10px black;
+    display: "";
 }
 .base {
     border-radius: 50%;
@@ -80,6 +102,29 @@ body {
     border-radius: 50% 0% 50% 50%;
     transform: rotate(-45deg);
 }
+
+.fire-main, .particle-fire {
+    position: absolute;
+    top: -80px;
+    left: 45%;
+    width: 10px;
+    height: 10px;
+    background-color: #ef5a00;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 10px #d43322);
+    animation: particleUp 2s ease-out 0;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    z-index: 1;
+}
+
+.fire-main {
+    top: -40px;
+    left: -2%;
+    animation: particleUp 3s;
+    animation-iteration-count: infinite;
+}
+
 @keyframes flicker {
     0% {transform: rotate(-1deg);}
     20% {transform: rotate(2deg) scaleY(1.05);}
@@ -88,6 +133,24 @@ body {
     80% {transform: rotate(-1deg) scaleY(0.90);}
     100% {transform: rotate(1deg);}
 }
+
+@keyframes particleUp {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+      
+    }
+    100% {
+      opacity: 0;
+      top: -160px;
+      transform: scale(0.2);
+    }
+  }
 
 input[type=checkbox]:checked + label .wrapper {
     opacity: 1;
