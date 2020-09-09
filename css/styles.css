@@ -39,11 +39,11 @@ input {
     height: 5%;
     position: absolute;
     left: 650px;
-    top: 456px;
+    top: 468px;
     display: block;
     opacity: 0;
     cursor: pointer;
-    z-index: 1;
+    z-index: 2;
 }
 .red {
     width: 90px;
@@ -94,7 +94,7 @@ input {
 }
 .flame-wrapper {
     position: absolute;
-    animation: flicker 3ms ease-in infinite;
+    animation: flicker 1s ease-in infinite;
 }
 .flame {
     bottom: 0;
@@ -103,10 +103,10 @@ input {
     transform: rotate(-45deg);
 }
 
-.fire-main, .particle-fire {
+.particle-fire {
     position: absolute;
-    top: -80px;
-    left: 45%;
+    top: -90px;
+    left: 25%;
     width: 10px;
     height: 10px;
     background-color: #ef5a00;
@@ -118,11 +118,30 @@ input {
     z-index: 1;
 }
 
-.fire-main {
-    top: -40px;
-    left: -2%;
-    animation: particleUp 3s;
+.fire-details {
+    position: absolute;
+    top: -90px;
+    left: 38%;
+    width: 10px;
+    height: 10px;
+    background-color: #ef5a00;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 10px #d43322);
+    animation: fireUp 2s ease-out 0;
     animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    z-index: 1;
+}
+
+.shine {
+    width: 180px;
+    height: 180px;
+    top: -150px;
+    left: -45px;
+    position: absolute;
+    background-color: rgba(255, 255, 239, 0.199);
+    border-radius: 50% 50% 0 0;
+    z-index: -1;
 }
 
 @keyframes flicker {
@@ -150,7 +169,24 @@ input {
       top: -160px;
       transform: scale(0.2);
     }
-  }
+}
+
+@keyframes fireUp {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        top: -140px;
+        transform: scale(0.4);
+    }
+}
 
 input[type=checkbox]:checked + label .wrapper {
     opacity: 1;
