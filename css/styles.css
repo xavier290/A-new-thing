@@ -31,56 +31,72 @@ input {
     position: absolute;
     top: 120px;
     left: 500px;
+    overflow: hidden;
 }
 
+.label {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 70px;
+    height: 40px;
+    background: linear-gradient(purple, orangered); 
+    box-shadow: inset 20px 0 10px rgba(0, 0, 0, 0.61),
+                inset 5px 0 10px rgba(0, 0, 0, 0.616);
+    border-radius: 40px;
+    border: solid 1px black;
+    cursor: pointer;
+    z-index: 4;
+}
 .wrapper {
     width: 10%;
     height: 5%;
     position: absolute;
-    left: 150px;
-    top: 250px;
+    left: 100px;
+    top: 240px;
     display: block;
     opacity: 0;
     cursor: pointer;
-    z-index: 2;
+    z-index: 4;
 }
 .red {
-    width: 90px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
     background: orangered;
     box-shadow: 0px 0px 10px 5px orangered;
 }
 .orange {
     left: 9px;
-    width: 70px;
-    height: 70px;
+    width: 40px;
+    height: 40px;
     background: orange;
     box-shadow: 0px 0px 12px 6px orange;
 }
 .gold {
     left: 17px;
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
     background: gold;
     box-shadow: 0px 0px 9px 4px gold;
 }
 .white {
-    left: 19px;
-    width: 50px;
-    height: 50px;
+    left: 16px;
+    width: 25px;
+    height: 25px;
     background: lightyellow;
     box-shadow: 0px 0px 9px 4px lightyellow;
 }
 .blue {
-    left: 36px;
-    width: 18px;
-    height: 5px;
+    left: 26px;
+    width: 8px;
+    height: 4px;
     background: darkblue;
     box-shadow: 0px 0px 15px 10px darkblue;
 }
 .black {
-    left: 36px;
-    width: 16px;
+    left: 26px;
+    width: 6px;
     height: 15px;
     bottom: -4px;
     background: black;
@@ -104,8 +120,8 @@ input {
 
 .particle-fire {
     position: absolute;
-    top: -90px;
-    left: 108%;
+    top: -50px;
+    left: 30px;
     width: 10px;
     height: 10px;
     background-color: #ef5a00;
@@ -119,8 +135,8 @@ input {
 
 .fire-details {
     position: absolute;
-    top: -90px;
-    left: 80%;
+    top: -60px;
+    left: 20px;
     width: 10px;
     height: 10px;
     background-color: #ef5a00;
@@ -133,15 +149,25 @@ input {
 }
 
 .shine {
-    width: 180px;
-    height: 180px;
-    top: -150px;
-    left: -45px;
+    width: 120px;
+    height: 120px;
+    top: -100px;
+    left: -30px;
     position: absolute;
     background-color: rgba(255, 255, 239, 0.199);
     box-shadow: 0px 0px 10px 5px rgba(255, 255, 239, 0.199);
     border-radius: 50% 50% 30% 30%;
     z-index: -1;
+}
+
+.earth {
+    width: 100%;
+    height: 60%;
+    background-color: rgb(27, 18, 0);
+    border-radius: 50%;
+    position: absolute;
+    top: 280px;
+    left: 40px;
 }
 
 @keyframes flicker {
@@ -166,7 +192,7 @@ input {
     }
     100% {
       opacity: 0;
-      top: -150px;
+      top: -100px;
       transform: scale(0.2);
     }
 }
@@ -183,11 +209,11 @@ input {
     }
     100% {
         opacity: 0;
-        top: -140px;
-        transform: scale(0.4);
+        top: -100px;
+        transform: scale(0.1);
     }
 }
 
-input[type=checkbox]:checked + label .wrapper {
+input[type=checkbox]:checked +label .wrapper {
     opacity: 1;
 }
