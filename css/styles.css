@@ -44,7 +44,7 @@ input {
     top: 280px;
     display: block;
     cursor: pointer;
-    opacity: 0;
+    opacity: 1;
     z-index: 4;
 }
 .red {
@@ -152,7 +152,7 @@ input {
 .smoke  {
     transition: 1s;
     position: absolute;
-    opacity: 1;
+    opacity: 0;
     bottom: 88px;
     left: 286px;
     z-index: 4;
@@ -166,8 +166,8 @@ input {
 .smoke li {
     position: absolute;
     list-style: none;
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     background: #000000;
     border-radius: 50%;
 }
@@ -194,7 +194,7 @@ li:nth-child(9) {
     100% {
         transform: translate(30px,-90px) scale(2);
         opacity: 0;
-        filter: blur(10px);
+        filter: blur(7px);
    }
 }
 
@@ -207,7 +207,7 @@ li:nth-child(9) {
     100% {
         transform: translate(-30px,-90px) scale(2);
         opacity: 0;
-        filter: blur(10px);
+        filter: blur(6px);
    }
 }
 
@@ -250,7 +250,7 @@ li:nth-child(9) {
 .earth {
     width: 180%;
     height: 80%;
-    background-color: rgb(34, 25, 8);
+    background-color: rgb(37, 29, 2);
     border-radius: 50%;
     position: absolute;
     top: 200px;
@@ -324,6 +324,161 @@ li:nth-child(9) {
     box-shadow: inset 2px 0 4px rgba(167, 167, 167, 0.685);
 }
 
+.owl-container {
+    position: absolute;
+    top: 2em;
+    left: 0em;
+    z-index: 4;
+}
+
+.owl {
+    width: 60px;
+    height: 90px;
+    background: transparent;
+    border-radius: 0 0 40px 40px;
+    box-shadow: -1px 82px 2px 0 #462f07;
+    position: absolute;
+    left: 10px;
+    top: 30px;
+}
+
+.eyes-owl, .eyes-owl::before {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: rgba(143, 94, 2, 0.781);
+    box-shadow: 0 0 8px 0;
+    position: absolute;
+    top: 8em;
+    left: 15px;
+}
+
+.eyes-owl::before {
+    content: "";
+    top: 0;
+    left: 32px;
+}
+
+.iris, .iris::before {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: linear-gradient(#462f07 50%, rgba(255, 255, 255, 0.664) 50%);
+    position: absolute;
+    top: 2px;
+    left: 3px;
+}
+
+.iris::before {
+    content: "";
+    top: 0;
+    left: 32px;
+}
+
+.pupil, .pupil::before {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: linear-gradient(transparent 50%, black 30%);
+    position: absolute;
+    top: 4px;
+    left: 5px;
+}
+
+.pupil::before {
+    content: "";
+    top: 0;
+    left: 32px;
+}
+
+.owl-beak {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid rgb(143, 94, 2, 0.781);
+    position: relative;
+    top: 9.2em;
+    left: 33px;
+}
+
+.wings, .wings::before {
+    width: 19px;
+    height: 46px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #462f07;
+    top: 9.5em;
+    right: -12px;
+    box-shadow: 0 0 2px 0;
+    z-index: 8;
+}
+
+.wings::before {
+    content: "";
+    top: 0;
+    right: -49px;
+}
+
+.owl-legs, .owl-legs::before {
+    width: 8px;
+    height: 4px;
+    background-color: rgb(143, 94, 2, 0.781);
+    border-radius: 30%;
+    position: absolute;
+    top: 12.2em;
+    left: 1.6em;
+}
+
+.owl-legs::before {
+    content: "";
+    top: 0;
+    left: 1.1em;
+}
+
+.stick {
+    position: absolute;
+    top: 196px;
+    left: 0;
+    width: 80px; 
+    height: 10px; 
+    background: #221c02;
+    z-index: 6;
+}
+
+.tree, .tree::before {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    width: 0;
+    height: 0;
+    border-right: 40px solid transparent;
+    border-top: 110px solid transparent;
+    border-left: 40px solid transparent;
+    border-bottom: 110px solid #031b0a;
+}
+
+.tree::before {
+    content: "";
+    top: -160px;
+    left: 220px;
+}
+
+.trunk, .trunk::before {
+    position: absolute;
+    top: 110px;
+    left: -8px;
+    width: 15px;
+    height: 30px;
+    background-color: rgb(22, 11, 0);
+}
+
+.trunk::before {
+    content: "";
+    top: -50px;
+    left: 260px;
+}
+
 @keyframes flicker {
     0% {transform: rotate(-1deg);}
     20% {transform: rotate(2deg) scaleY(1.05);}
@@ -369,10 +524,9 @@ li:nth-child(9) {
 }
 
 input[type=checkbox]:checked +label .wrapper {
-    opacity: 1;
+    opacity: 0;
 }
 
 input[type=checkbox]:checked +label .smoke {
-    transition: 1s;
-    opacity: 0;
+    opacity: 1;
 }
