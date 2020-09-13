@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Long+Cang&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
 * {
     margin: 0;
@@ -8,6 +9,7 @@
 }
 
 body {
+    height: 100%;
     background: linear-gradient(#122833, #000);
     min-height: 100vh;
 }
@@ -24,6 +26,15 @@ input {
     font-family: 'Long Cang', cursive;
 }
 
+.font2 h1 {
+  position: absolute;
+  top: 6%;
+  left: 20%;
+  font-size: 400px;
+  font-family: 'Kaushan Script', cursive;
+  z-index: -1;
+}
+
 .container {
     width: 400px;
     height: 400px;
@@ -31,8 +42,8 @@ input {
     background-color: #122833;
     border: solid 12px #111f27;
     position: absolute;
-    top: 120px;
-    left: 500px;
+    top: 20%;
+    left: 38%;
     overflow: hidden;
 }
 
